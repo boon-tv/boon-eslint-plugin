@@ -1,0 +1,35 @@
+{
+  "name": "@boon-tv/eslint-plugin",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "rm -rf ./build && tsc",
+    "prepare": "husky install",
+    "precommit": "yarn build && git add ./dist",
+    "postinstall": "install-peers -f"
+  },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "5.9.0",
+    "@typescript-eslint/scope-manager": "5.9.0",
+    "@typescript-eslint/type-utils": "5.9.0",
+    "semver": "^7.3.5",
+    "tsutils": "^3.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/semver": "^7.3.9",
+    "husky": "^7.0.4",
+    "install-peers-cli": "^2.2.0",
+    "typescript": "4.6.1-rc"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  }
+}

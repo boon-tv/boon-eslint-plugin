@@ -1,0 +1,4 @@
+# Until we move this to NPM we have to version the dist files as well
+# dist/
+
+node_modules
