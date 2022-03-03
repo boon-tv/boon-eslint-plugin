@@ -14,11 +14,14 @@ npm i --dev @boon-tv/eslint-plugin@boon-tv/eslint-plugin
 
 ## Configuration
 
-Add the plugin and preset to your eslint config:
+Add the plugin and preset to your eslint config (`parserOptions.project` is also required):
 ```json
 {
     "plugins": ["@boon-tv"],
-    "extends": ["plugin:@boon-tv/recommended"]
+    "extends": ["plugin:@boon-tv/recommended"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
 }
 ```
 
