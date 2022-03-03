@@ -1,4 +1,4 @@
-# boon-eslint-plugin
+# @boon-tv/eslint-plugin
 
 ## Installation
 
