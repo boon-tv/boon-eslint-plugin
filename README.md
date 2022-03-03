@@ -4,12 +4,12 @@
 
 ### Yarn
 ```
-yarn add -D @boon-tv/eslint-plugin
+yarn add -D @boon-tv/eslint-plugin@boon-tv/eslint-plugin
 ```
 
 ### NPM
 ```
-npm i --dev @boon-tv/eslint-plugin
+npm i --dev @boon-tv/eslint-plugin@boon-tv/eslint-plugin
 ```
 
 ## Configuration
