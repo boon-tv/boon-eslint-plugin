@@ -5,9 +5,8 @@
   "source": "src/index.ts",
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "prepare": "husky install",
-    "precommit": "yarn build && git add ./dist",
-    "postinstall": "install-peers -f"
+    "prepare": "husky install && install-peers -f",
+    "precommit": "yarn build && git add ./dist"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "5.9.0",
