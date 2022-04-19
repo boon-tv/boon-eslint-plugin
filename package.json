@@ -5,7 +5,8 @@
   "source": "src/index.ts",
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "prepare": "husky install && install-peers -f",
+    "prepare:dev": "husky install && install-peers -f",
+    "prepare": "./scripts/prepare.sh",
     "precommit": "yarn build && git add ./dist"
   },
   "dependencies": {
