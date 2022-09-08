@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@boon-tv'
+
+      - name: Setup publish code env
+        run: |
+          rm ./package.json
+          mv ./package.publish.json ./package.json
+
+      - name: Install deps
+        run: |
+          yarn install --immutable
+
+      - name: Build
+        run: |
+          yarn build
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
